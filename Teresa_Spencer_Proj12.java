@@ -15,6 +15,7 @@ public class Teresa_Spencer_Proj12 {
         };
 
         for(Account account : accounts) {
+            try {
             System.out.println(account);
             account.deposit(1000);
             System.out.println("After depositing $1000: ");
@@ -22,6 +23,10 @@ public class Teresa_Spencer_Proj12 {
             account.withdraw(500);
             System.out.println("After withdrawing $500: ");
             System.out.println(account);
+            }
+            catch (IllegalAmountException ex) {
+                System.out.println("Error: " + ex.getMessage());
+            }
 
             if(account instanceof SavingAccount) {
                 SavingAccount sAccount = (SavingAccount) account;

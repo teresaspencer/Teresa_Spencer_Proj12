@@ -1,3 +1,10 @@
+// Author: Teresa Spencer
+// Date: 10/17/2024
+// CSCI 231
+// Description: This project contains a bank account family of classes to reinforce derived classes and polymorphism.
+// The program will test several bank account types, making deposits and withdrawals
+// The program will utilize exception handling
+
 public class SavingAccount extends Account {
     private double interestRate;
     public SavingAccount() {
@@ -13,10 +20,10 @@ public class SavingAccount extends Account {
     public double getInterestRate() {
         return interestRate;
     }
-    public void withdraw(double amount) { 
+    public void withdraw(double amount) throws IllegalAmountException { 
         double sBalance = getBalance();
         if(sBalance - amount < 500) {
-            System.out.println("Account balance cannot go below $500");
+            throw new IllegalAmountException("Account balance cannot go below $500");
         }
         else if(sBalance >= amount) {
             setBalance(getBalance() - amount);
