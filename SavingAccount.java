@@ -20,16 +20,16 @@ public class SavingAccount extends Account {
     public double getInterestRate() {
         return interestRate;
     }
-    public void withdraw(double amount) throws IllegalAmountException { 
+    public void withdraw(double amount) throws IllegalAmountException, NoSufficientFundsException { 
         double sBalance = getBalance();
-        if(sBalance - amount < 500) {
-            throw new IllegalAmountException("Account balance cannot go below $500");
+        if(amount <= 0) {
+            throw new IllegalAmountException("Withdrawal amount must be greater than 0");
         }
-        else if(sBalance >= amount) {
+        else if(sBalance - amount < 500) {
+            throw new NoSufficientFundsException("Account balance cannot go below $500");
+        }
+        else if (sBalance >= amount) {
             setBalance(getBalance() - amount);
-        }
-        else {
-            System.out.println("Insufficient funds");
         }
     }
     public void addInterest() {

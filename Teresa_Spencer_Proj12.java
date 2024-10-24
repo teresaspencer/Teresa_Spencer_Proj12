@@ -20,11 +20,15 @@ public class Teresa_Spencer_Proj12 {
             account.deposit(1000);
             System.out.println("After depositing $1000: ");
             System.out.println(account);
-            account.withdraw(500);
-            System.out.println("After withdrawing $500: ");
+            account.withdraw(1000);
+            System.out.println("After withdrawing $1000: ");
             System.out.println(account);
             }
             catch (IllegalAmountException ex) {
+                System.out.println("Error: " + ex.getMessage());
+            }
+
+            catch (NoSufficientFundsException ex) {
                 System.out.println("Error: " + ex.getMessage());
             }
 

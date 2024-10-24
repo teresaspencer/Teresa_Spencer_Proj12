@@ -12,12 +12,15 @@ public class CheckingAccount extends Account {
     public CheckingAccount(int id, double balance) {
         super(id, balance);
     }
-    public void withdraw(double amount) { 
-        if(getBalance() >= amount) {
+    public void withdraw(double amount) throws IllegalAmountException, NoSufficientFundsException { 
+        if(amount <= 0) {
+            throw new IllegalAmountException("Withdrawal amount must be greater than 0");
+        }
+        else if(getBalance() >= amount) {
             setBalance(getBalance() - amount);
         }
         else {
-            System.out.println("Insufficient funds");
+            throw new NoSufficientFundsException("Insufficient account balance");
         }
     }
     public String toString() {

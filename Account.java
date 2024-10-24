@@ -33,7 +33,7 @@ public class Account {
     public void deposit(double amount) { 
         balance += amount;
     }
-    public void withdraw(double amount) {}
+    public void withdraw(double amount) throws IllegalAmountException, NoSufficientFundsException {}
 
     public String toString() {
         return "Account ID: " + id + "\tBalance: " + balance;
