@@ -65,6 +65,6 @@ public class Teresa_Spencer_Proj12 {
         catch (AccountException ex) {
             System.out.println("Error: " + ex.getMessage());
         }
-
+        System.out.println();
     }
 }
