@@ -7,6 +7,7 @@
 
 public class SavingAccount extends Account {
     private double interestRate;
+    // Constructors
     public SavingAccount() {
         super();
         interestRate = 0.0;
@@ -22,9 +23,11 @@ public class SavingAccount extends Account {
     }
     public void withdraw(double amount) throws AccountException { 
         double sBalance = getBalance();
+        // Check for IllegalAmountException
         if(amount <= 0) {
             throw new IllegalAmountException("Withdrawal amount must be greater than 0");
         }
+        // Check for NoSufficientFundsException
         else if(sBalance - amount < 500) {
             throw new NoSufficientFundsException("Account balance cannot go below $500");
         }

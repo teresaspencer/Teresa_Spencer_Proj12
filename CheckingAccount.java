@@ -6,6 +6,7 @@
 // The program will utilize exception handling
 
 public class CheckingAccount extends Account {
+    // Constructors
     public CheckingAccount() {
         super();
     }
@@ -13,12 +14,14 @@ public class CheckingAccount extends Account {
         super(id, balance);
     }
     public void withdraw(double amount) throws AccountException { 
+        // Check for IllegalAmountException
         if(amount <= 0) {
             throw new IllegalAmountException("Withdrawal amount must be greater than 0");
         }
         else if(getBalance() >= amount) {
             setBalance(getBalance() - amount);
         }
+        // Check for NoSufficientFundsException
         else {
             throw new NoSufficientFundsException("Insufficient account balance");
         }

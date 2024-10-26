@@ -5,6 +5,7 @@
 // The program will test several bank account types, making deposits and withdrawals
 // The program will utilize exception handling
 
+// This class extends Exception, to be used as a general account exception
 public class AccountException extends Exception {
     public AccountException(String message) {
         super(message);

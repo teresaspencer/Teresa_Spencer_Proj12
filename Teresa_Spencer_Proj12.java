@@ -15,6 +15,7 @@ public class Teresa_Spencer_Proj12 {
             new SavingAccount(2, 2000, .05)
         };
 
+        // For each loop to test deposit and withdraw
         for(Account account : accounts) {
             try {
             System.out.println(account);
@@ -25,6 +26,8 @@ public class Teresa_Spencer_Proj12 {
             System.out.println("After withdrawing $1000: ");
             System.out.println(account);
             }
+
+            // Catch exceptions
             catch (IllegalAmountException ex) {
                 System.out.println("Error: " + ex.getMessage());
             }
@@ -45,7 +48,8 @@ public class Teresa_Spencer_Proj12 {
             }
             System.out.println();
         }
-        
+
+        // Testing IllegalAmountException by attempting to withdraw 0
         try {
             accounts[1].withdraw(0);
         }
