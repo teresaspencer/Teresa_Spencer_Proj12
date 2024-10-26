@@ -5,7 +5,7 @@
 // The program will test several bank account types, making deposits and withdrawals
 // The program will utilize exception handling
 
-public class IllegalAmountException extends Exception {
+public class IllegalAmountException extends AccountException {
     public IllegalAmountException(String message) {
         super(message);
     }

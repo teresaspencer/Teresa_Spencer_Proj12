@@ -20,7 +20,7 @@ public class SavingAccount extends Account {
     public double getInterestRate() {
         return interestRate;
     }
-    public void withdraw(double amount) throws IllegalAmountException, NoSufficientFundsException { 
+    public void withdraw(double amount) throws AccountException { 
         double sBalance = getBalance();
         if(amount <= 0) {
             throw new IllegalAmountException("Withdrawal amount must be greater than 0");

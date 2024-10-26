@@ -31,6 +31,10 @@ public class Teresa_Spencer_Proj12 {
             catch (NoSufficientFundsException ex) {
                 System.out.println("Error: " + ex.getMessage());
             }
+            
+            catch (AccountException ex) {
+                System.out.println("Error: " + ex.getMessage());
+            }
 
             if(account instanceof SavingAccount) {
                 SavingAccount sAccount = (SavingAccount) account;

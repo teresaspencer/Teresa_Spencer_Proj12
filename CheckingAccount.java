@@ -12,7 +12,7 @@ public class CheckingAccount extends Account {
     public CheckingAccount(int id, double balance) {
         super(id, balance);
     }
-    public void withdraw(double amount) throws IllegalAmountException, NoSufficientFundsException { 
+    public void withdraw(double amount) throws AccountException { 
         if(amount <= 0) {
             throw new IllegalAmountException("Withdrawal amount must be greater than 0");
         }

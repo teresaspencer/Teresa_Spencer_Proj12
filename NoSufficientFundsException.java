@@ -5,7 +5,7 @@
 // The program will test several bank account types, making deposits and withdrawals
 // The program will utilize exception handling
 
-public class NoSufficientFundsException extends Exception {
+public class NoSufficientFundsException extends AccountException {
     public NoSufficientFundsException(String message) {
         super(message);
     }
