@@ -45,5 +45,22 @@ public class Teresa_Spencer_Proj12 {
             }
             System.out.println();
         }
+        
+        try {
+            accounts[1].withdraw(0);
+        }
+
+        catch (IllegalAmountException ex) {
+            System.out.println("Error: " + ex.getMessage());
+        }
+
+        catch (NoSufficientFundsException ex) {
+            System.out.println("Error: " + ex.getMessage());
+        }
+
+        catch (AccountException ex) {
+            System.out.println("Error: " + ex.getMessage());
+        }
+
     }
 }
