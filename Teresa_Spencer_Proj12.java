@@ -4,6 +4,7 @@
 // Description: This project contains a bank account family of classes to reinforce derived classes and polymorphism.
 // The program will test several bank account types, making deposits and withdrawals
 // The program will utilize exception handling
+
 public class Teresa_Spencer_Proj12 {
     public static void main(String[] args) {
         // Declare and array of Account named accounts of size 4
@@ -29,6 +30,10 @@ public class Teresa_Spencer_Proj12 {
             }
 
             catch (NoSufficientFundsException ex) {
+                System.out.println("Error: " + ex.getMessage());
+            }
+
+            catch (AccountException ex) {
                 System.out.println("Error: " + ex.getMessage());
             }
 
